@@ -15,16 +15,13 @@
      * On instancie le compte (creation d'un objet)
      */
 
-    $compte1 = new Commpte("Arezki", -100);
+    $compte1 = new Commpte("Arezki", 1000);
     //On ecrit dans la propriété titulaire
-
-    $compte2 = new Commpte("Ouhenia", 200);
-
-    var_dump($compte1);
+  $res=  $compte1->retirer(990);
+  echo $res;
     echo '<br>';
-    var_dump($compte2);
-    echo '<br>';
-$compte1->verif();
+ $compte1->consulterSolde();
+
     ?>
 </body>
 
