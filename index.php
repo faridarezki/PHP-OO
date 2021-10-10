@@ -10,20 +10,36 @@
 </head>
 
 <body>
+  <form method="POST" action="#">
+    <label for="sommeDepose ">Somme à deposer</label>
+    <input type="text" name="sommeDepose">
+    <label for="titulaireCompte ">Titulaire</label>
+    <input type="text" name="titulaireCompte">
+    <label for="sommeRetire ">Somme à retirer</label>
+    <input type="text" name="sommeRetire">
+    <input type="submit" value="Retirer">
+
+
+  </form>
   <?php
   require_once 'classes/Compte.classe.php';
   /**
    * On instancie le compte (creation d'un objet)
    */
-
-  $compte1 = new Commpte("Arezki", 1000);
+  $titulaireCompte = $_POST['titulaireCompte'];
+  $sommeDepose = $_POST['sommeDepose'];
+  $compte1 = new Commpte($titulaireCompte, $sommeDepose);
   //On ecrit dans la propriété titulaire
-  $res =  $compte1->retirer(990);
-  echo $res;
+  $sommeRetire = $_POST['sommeRetire'];
+  $compte1->retirer($sommeRetire);
+
+
+
   echo '<br>';
-  $compte1->consulterSolde();
+  //$compte1->consulterSolde();
 
   ?>
+
 </body>
 
 </html>

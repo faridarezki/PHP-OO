@@ -20,29 +20,30 @@ class Commpte
      */
 
     public $solde;
-    public $newsolde;
+    public $newSolde;
 
     public function __construct(string $titulaire, float $solde)
     {
         $this->titulaire = $titulaire;
         $this->solde = $solde;
     }
-       public function consulterSolde()
-    {
-        echo "Votre solde est de : ".$this->solde;
-      
-    } 
 
-    public function retirer(int $montant)
+    /**
+     * 
+     * Retire un montant du solde du compte
+     * 
+     * @param float $montant  Montant à retirer
+     * @return void
+     */
+
+    public function retirer(float $montant)
     {
-        if ($montant >= $this->solde) {
-            $this->solde=$this->solde;
-          return  "Vous n'avez pas assez sur votre compte pour retirez    ";
+        if ($montant > 0 && $this->solde >= $montant) {
+            $this->solde -= $montant;
+            echo $this->titulaire . ' ton solde est de : ' . $this->solde;
         } else {
-            $this->solde = ($this->solde - $montant);
-          echo "votre nouveau solde est de : " . $this->solde . " euros";
-
+            //   echo "votre nouveau solde est de : " . $this->solde . " euros";
+            return  "Montant invalide ou insuffisant";
         }
     }
- 
 }
