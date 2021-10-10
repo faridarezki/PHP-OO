@@ -1,10 +1,24 @@
 <?php 
-
+/**
+ * Objet Compte bancaire
+ */
 class Commpte 
 {
-//propriétés
+
+/**
+ * Titulaire du compte
+ *
+ * @var string
+ */
+
 public $titulaire;
-public $solde;
+/**
+ * Solde du compte
+ *
+ * @var float
+ */
+
+public $solde="100";
 
 }
 
