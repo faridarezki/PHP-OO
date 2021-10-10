@@ -11,4 +11,5 @@ $ git push
 git push --set-upstream origin master
 $ git push
 
-
+# Retourner la valeur absolue du solde
+ echo "Attention vous êtes à decouvert de ".abs($this->solde)." euros";
